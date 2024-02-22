@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="wmaint.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:wmaint"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    Title="wmaint">
+
+
+    <StackPanel x:Name="rootPanel">
+
+        <muxc:MenuBar >
+            <muxc:MenuBarItem Title="File">
+                <MenuFlyoutSubItem Text="New">
+                    <MenuFlyoutItem Text="Plain Text Document"/>
+                    <MenuFlyoutItem Text="Rich Text Document"/>
+                    <MenuFlyoutItem Text="Other Formats..."/>
+                </MenuFlyoutSubItem>
+                <MenuFlyoutItem Text="Save"/>
+                <MenuFlyoutSeparator />
+                <MenuFlyoutItem Text="Exit" Click="exit_Click"/>
+            </muxc:MenuBarItem>
+
+            <muxc:MenuBarItem Title="Edit">
+                <MenuFlyoutItem Text="Undo"/>
+                <MenuFlyoutItem Text="Cut"/>
+                <MenuFlyoutItem Text="Copy"/>
+                <MenuFlyoutItem Text="Paste"/>
+            </muxc:MenuBarItem>
+
+            <muxc:MenuBarItem Title="Help">
+                <MenuFlyoutItem Text="About" Click="about_Click" />
+            </muxc:MenuBarItem>
+        </muxc:MenuBar>
+
+        <SplitView IsPaneOpen="True" DisplayMode="Inline" OpenPaneLength="296">
+            <SplitView.Pane>
+                <local:FileExplorerControl x:Name="fileExp" Grid.Column="0" Loaded="fileExp_Loaded" />
+            </SplitView.Pane>
+
+            <Grid>
+                <RichTextBlock FontSize="12" IsTextSelectionEnabled="True"  x:Name="editBlock">
+                    <Paragraph>text and text</Paragraph>
+                </RichTextBlock>
+            </Grid>
+        </SplitView>
+
+
+        <TextBlock x:Name="notificationArea" FontSize="12" Text=" " />
+
+    </StackPanel>
+</Window>

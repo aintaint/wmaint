@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "wmaint (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "wmaint (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
