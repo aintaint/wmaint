@@ -1,0 +1,1 @@
+Get-NetAdapter | Where-Object PhysicalMediaType -eq 'Native 802.11' | Restart-NetAdapter -Confirm:$false
