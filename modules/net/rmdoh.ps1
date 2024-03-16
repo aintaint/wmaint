@@ -7,3 +7,5 @@ $i | ForEach-Object {
 	
 }
 Clear-DnsClientCache;
+
+# http://www.msftconnecttest.com/redirect
